@@ -1,0 +1,33 @@
+- description: |-
+    yum update remote servers
+
+    <img src="http://tech.junkpot.net/wp-content/uploads/2012/11/yum.jpg" widht="100" height="100"/>
+  executionEnabled: true
+  id: c575f87d-a923-4289-ba3a-0779ad4e640e
+  loglevel: INFO
+  name: yum update 2
+  nodeFilterEditable: true
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: true
+      rankOrder: ascending
+      threadcount: 1
+    filter: .*.mtdb.nl
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-become: 'false'
+        ansible-playbook: /home/mboogert/rundeck/ansible/playbooks/yum_update.yaml
+      description: yum update
+      nodeStep: false
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorkflowStep
+    keepgoing: true
+    pluginConfig:
+      WorkflowStrategy:
+        node-first: null
+    strategy: node-first
+  uuid: c575f87d-a923-4289-ba3a-0779ad4e640e
+
