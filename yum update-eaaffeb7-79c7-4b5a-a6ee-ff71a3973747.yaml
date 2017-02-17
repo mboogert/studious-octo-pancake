@@ -1,5 +1,5 @@
 - description: |-
-    yum update
+    yum update remote servers
 
     <img src="http://tech.junkpot.net/wp-content/uploads/2012/11/yum.jpg" widht="100" height="100"/>
   executionEnabled: true
