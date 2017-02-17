@@ -1,0 +1,33 @@
+- description: |-
+    yum update
+
+    <img src="http://tech.junkpot.net/wp-content/uploads/2012/11/yum.jpg" widht="100" height="100"/>
+  executionEnabled: true
+  id: eaaffeb7-79c7-4b5a-a6ee-ff71a3973747
+  loglevel: INFO
+  name: yum update
+  nodeFilterEditable: true
+  nodefilters:
+    dispatch:
+      excludePrecedence: true
+      keepgoing: true
+      rankOrder: ascending
+      threadcount: 1
+    filter: .*.mtdb.nl
+  nodesSelectedByDefault: true
+  scheduleEnabled: true
+  sequence:
+    commands:
+    - configuration:
+        ansible-become: 'false'
+        ansible-playbook: /home/mboogert/rundeck/ansible/playbooks/yum_update.yaml
+      description: yum update
+      nodeStep: false
+      type: com.batix.rundeck.plugins.AnsiblePlaybookWorkflowStep
+    keepgoing: true
+    pluginConfig:
+      WorkflowStrategy:
+        node-first: null
+    strategy: node-first
+  uuid: eaaffeb7-79c7-4b5a-a6ee-ff71a3973747
+
